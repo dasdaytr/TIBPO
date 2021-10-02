@@ -8,6 +8,7 @@ import java.util.Objects;
 public class SearchAndDeleteFile {
     private final File file;
     private final InitBytes initBytes;
+    private static File p;
 
     public SearchAndDeleteFile(File file){
         this.file = file;
@@ -19,6 +20,7 @@ public class SearchAndDeleteFile {
     }
 
     private  boolean init(){
+        p = file.getParentFile();
         if(file.isDirectory()){
             searchFileAndDelete(file);
         }else{
@@ -32,7 +34,9 @@ public class SearchAndDeleteFile {
     }
     private File searchFileAndDelete(File files){
         File parent = files.getParentFile();
-        if(file ==parent){
+        System.out.println(p.getPath());
+        System.out.println(files.getPath());
+        if(p.getPath().equals(files.getPath())){
             return null;
         }
         for(File item: Objects.requireNonNull(files.listFiles())){

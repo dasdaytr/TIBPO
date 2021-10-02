@@ -8,7 +8,7 @@ public class TestSearchFile extends Assert {
     private SearchAndDeleteFile searchAndDeleteFile;
     @Before
     public void init(){
-        File file = new File("ada");
+        File file = new File("D:\\test\\pr3");
         searchAndDeleteFile = new SearchAndDeleteFile(file);
     }
     @Test
