@@ -9,8 +9,12 @@ public class SearchAndDeleteFile {
     }
     public SearchAndDeleteFile(String stringPath){
         this.stringPath = stringPath;
+        file = new File(stringPath);
     }
-    private static void init(){
-
+    private static boolean init(){
+        return false;
+    }
+    public boolean startDeleteFiles(){
+        return init();
     }
 }
